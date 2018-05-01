@@ -1,0 +1,52 @@
+
+
+<div class="snap-drawers">
+  <div class="snap-drawer snap-drawer-left">
+    <div>
+      <h3>HobbyMate</h3>
+      <div class="demo-social">
+      </div>
+      <ul>
+        <li>
+          <a routerLink="search" routerLinkActive="active">Find Match</a>
+        </li>
+        <li><a routerLink="chat" routerLinkActive="active">Messages</a></li>
+        <li><a routerLink="newAccount" routerLinkActive="active">New Account</a></li>
+        <!--<li><a routerLink="socketChat" routerLinkActive="active">Freelancing Projects</a></li>-->
+        <li><a routerLink="imageGallery" routerLinkActive="active">Image Gallery</a></li>
+
+        <!--<li><a routerLink="newChat" routerLinkActive="active">New Chat</a></li>-->
+
+      </ul>
+
+
+    </div>
+  </div>
+  <div class="snap-drawer snap-drawer-right"></div>
+</div>
+
+
+<div id="content" class="snap-content">
+
+  <div id="toolbar"  class="row">
+    <div id="open-left"></div>
+    <!--<h1>HobbyMate</h1>-->
+
+    <!--<h1> Hey {{userName}}, How you doing?</h1>-->
+
+
+ <div class="logout-button col-xs-4 col-sm-4 col-md-4 col-lg-1 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-11">
+    <button class="darkButton" (click)="logOut()" >Log out</button>
+ </div>
+  </div>
+
+
+  <div id="main-content">
+
+
+    <router-outlet></router-outlet>
+
+
+  </div>
+
+</div>

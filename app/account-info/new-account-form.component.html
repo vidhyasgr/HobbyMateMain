@@ -1,0 +1,151 @@
+<form class="container" [formGroup]="form"
+      (ngSubmit)="onSubmit(form.value)">
+
+  <br>
+
+  <div class="col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" style="margin-top: 60px;">
+
+    <div class="col-xs-3 col-sm-3 col-md-4 col-lg-4" style="    margin-left: 8%;">
+
+      <input type="text" class="form-control inputBoxDark" name="firstName" placeholder="firstname" formControlName="firstName"
+             maxlength="100">
+
+      <br>
+
+      <div *ngIf="form.controls.firstName.invalid" class="alert alert-danger" role="alert">Please enter the first name
+      </div>
+
+
+      <input type="text" class="inputBoxDark form-control" name="lastName" placeholder="lastname" formControlName="lastName"
+             maxlength="100">
+
+      <br>
+
+      <div *ngIf="form.controls.lastName.invalid" class="alert alert-danger" role="alert">Please enter the last name
+      </div>
+
+
+      <!--<my-date-picker name="mydate" [options]="myDatePickerOptions"-->
+                      <!--formControlName="myDate"></my-date-picker>-->
+
+      <input type="date" class="inputBoxDark form-control" name="mydate" min="1900-01-01" max="2010-12-31" formControlName="myDate" required="true" />
+
+      <br>
+
+      <select [(ngModel)]="selectedValue" class="inputBoxDark form-control" name="country" formControlName="country"
+              (change)="fetchCities()">
+
+        <option *ngFor="let c of countries" [selected]="c.name == 'Germany'">{{c.name}}</option>
+
+      </select>
+
+
+      <br> <input type="text" (click)="toggleDropDown()" class="form-control" name="city" placeholder="city"
+                  formControlName="city"
+                  maxlength="100" (keyup)="search($event)" autocomplete="new-password">
+
+      <div (clickOutside)="onClickedOutside()" *ngIf="showDropDown" class="state state-container-dropdown">
+
+        <div (click)='selectValue(city.name)' *ngFor="let city of cities | searchFilter: getSearchValue()">
+
+          <!--<li>-->
+
+          <!--{{city.city_name}}-->
+
+          <a [innerHTML]="city.name">
+            {{city.name}}
+          </a>
+
+          <!--</li>-->
+
+        </div>
+
+      </div>
+
+
+      <br>
+
+
+      <div *ngIf="form.controls.city.invalid" class="alert alert-danger" role="alert">Please enter the city name</div>
+
+
+      <input type="text" class="inputBoxDark form-control" name="email" placeholder="email" formControlName="email"
+             maxlength="100" disabled>
+
+      <br>
+
+      <input type="tel" class="inputBoxDark form-control" name="mobileNumber" placeholder="+49 1726658284" formControlName="mobileNumber" maxlength="14">
+
+
+      <br> <input type="password" class="inputBoxDark form-control" name="password" placeholder="password" formControlName="password"
+                  maxlength="100" style="box-shadow: 0 0 3px #CC0000;">
+
+      <br>
+
+      <div *ngIf="form.controls.password.invalid" class="alert alert-danger" role="alert">Please enter the password
+      </div>
+
+
+      <input type="password" class="inputBoxDark form-control" name="retypePassword" placeholder="retype password"
+             formControlName="retypePassword" maxlength="100">
+
+      <br>
+
+      <div *ngIf="form.controls.retypePassword.invalid" class="alert alert-danger" role="alert">Please retype the
+        password
+      </div>
+
+
+      <input type="text" class="inputBoxDark form-control" name="notRobotCode" placeholder="notRobotCode"
+             formControlName="notRobotCode" maxlength="100">
+
+
+      <br> <input type="text" class="inputBoxDark form-control" name="interest" placeholder="interest" formControlName="interest"
+                  maxlength="100">
+
+      <br>
+
+      <div *ngIf="form.controls.interest.invalid" class="alert alert-danger" role="alert">Please enter the interest
+      </div>
+
+
+      <input type="text" class="inputBoxDark form-control" name="description" placeholder="few lines about you"
+             formControlName="description" maxlength="100">
+
+      <br>
+
+      <div *ngIf="form.controls.description.invalid" class="alert alert-danger" role="alert">Please describe yourself
+      </div>
+
+
+      <button type="submit" class="darkButton btn-group-justified">Save</button>
+
+
+      <!--<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>-->
+
+      <!--<noscript>-->
+      <!--<div>-->
+      <!--<iframe src="https://www.google.com/recaptcha/api/fallback?k=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"-->
+      <!--frameborder="0" scrolling="no"-->
+      <!--style="border-style: none;">-->
+      <!--</iframe>-->
+      <!--<div style="border-style: none;-->
+      <!--background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">-->
+      <!--<textarea id="g-recaptcha-response" name="g-recaptcha-response"-->
+      <!--class="g-recaptcha-response"-->
+      <!--style="border: 1px solid #c1c1c1;" >-->
+      <!--</textarea>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</noscript>-->
+
+    </div>
+
+
+  </div>
+
+
+</form>
+
+
+<!--<button class="darkButton" value="UploadJSON" (click)="getData()"></button>-->

@@ -1,0 +1,272 @@
+
+
+
+
+
+
+
+<div id="searchRegion">
+
+
+
+  <!-- here comes play, next and previous buttons -->
+
+  <div class="row">
+
+
+  <div class="box col-lg-2 col-xs-2 col-sm-2 col-md-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-2"
+       style="margin-left: 12%;">
+
+
+
+  <div class="row" style="text-align: center">
+
+
+  <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-0" style="display: inline-block;">
+
+      <button class="darkButton glyphicon glyphicon-backward"></button>
+
+      </div>
+
+
+    <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-0" style="display: inline-block;">
+
+      <!--<button class="darkButton glyphicon glyphicon-play"></button>-->
+
+      <button class="darkButton" (click)="searchForNearbyUsers()">Search</button>
+
+    </div>
+
+
+
+      <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-5 col-lg-offset-0" style="display: inline-block;">
+
+      <button class="darkButton glyphicon glyphicon-forward"></button>
+
+      </div>
+
+  </div>
+
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+  <!--<button class="darkButton-filter" (click)="toggleMenu()" style="margin: 0;-->
+    <!--margin-top: 1%;">Filter-->
+  <!--</button>-->
+
+
+
+
+  <div class="row">
+
+
+   <!--<div class="form-box col-lg-1" [@slideInOut]="menuState">-->
+
+       <!--<select class="darkButton buttons-form-box">-->
+       <!--<option>10-15</option>-->
+       <!--<option selected>15-20</option>-->
+       <!--<option>20-25</option>-->
+       <!--<option>25-30</option>-->
+       <!--<option>30-35</option>-->
+       <!--<option>35-40</option>-->
+       <!--<option>40-45</option>-->
+     <!--</select>-->
+
+     <!--<select class="darkButton buttons-form-box">-->
+       <!--<option>Interest</option>-->
+       <!--<option selected>Music</option>-->
+       <!--<option>Photography</option>-->
+       <!--<option>Film</option>-->
+       <!--<option>Programming</option>-->
+       <!--<option>Entrepreneur</option>-->
+       <!--<option>Sports</option>-->
+     <!--</select>-->
+
+     <!--<select class="darkButton buttons-form-box">-->
+       <!--<option>City</option>-->
+       <!--<option selected>Görlitz</option>-->
+       <!--<option>Dresden</option>-->
+       <!--<option>Berlin</option>-->
+       <!--<option>München</option>-->
+       <!--<option>Potsdam</option>-->
+       <!--<option>Essen</option>-->
+     <!--</select>-->
+
+
+   <!--</div>-->
+
+
+
+
+<div class="row" style="margin-top: 3%;">
+
+
+   <div class="circles col-lg-5 col-xs-4 col-sm-4 col-md-4 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-0" >
+
+  <div class="circle c1">
+
+    <div *ngFor="let itemOne of circles[0].itemsInCircle">
+
+  <button class="item" [style.left.px] = "itemOne.xAxis" [style.top.px] = "itemOne.yAxis" style="
+  background-image: url(http://cdn2.spiegel.de/images/image-1113381-galleryV9-nzsk-1113381.jpg);  background-size: 30px 30px;" (click)="assigningUserDetail(itemOne)" (mouseover)='assigningUserDetail(itemOne)'
+          [@state]="'in'">
+  </button>
+
+    </div>
+
+    <div class="circle c2">
+
+      <div *ngFor="let itemTwo of circles[1].itemsInCircle">
+
+         <button class="item" [style.left.px] = "itemTwo.xAxis" [style.top.px] = "itemTwo.yAxis" style="
+  background-image: url(http://cdn2.spiegel.de/images/image-1113381-galleryV9-nzsk-1113381.jpg);  background-size: 30px 30px;" (click)="assigningUserDetail(itemTwo)" (mouseover)='assigningUserDetail(itemTwo)'
+                 [@state]="'in'">
+        </button>
+
+      </div>
+
+      <div class="circle c3">
+
+        <div *ngFor="let itemThree of circles[2].itemsInCircle">
+
+          <button class="item" [style.left.px] = "itemThree.xAxis" [style.top.px] = "itemThree.yAxis" style="
+  background-image: url(http://cdn2.spiegel.de/images/image-1113381-galleryV9-nzsk-1113381.jpg);  background-size: 30px 30px;" (click)="assigningUserDetail(itemThree)" (mouseover)='assigningUserDetail(itemThree)'
+                  [@state]="'in'">
+          </button>
+
+        </div>
+
+        <div class="circle c4">
+
+          <div *ngFor="let itemFour of circles[3].itemsInCircle">
+
+            <button class="item" [style.left.px] = "itemFour.xAxis" [style.top.px] = "itemFour.yAxis" style="
+             background-image: url(http://cdn2.spiegel.de/images/image-1113381-galleryV9-nzsk-1113381.jpg);  background-size: 30px 30px;" (click)="assigningUserDetail(itemFour)" (mouseover)='assigningUserDetail(itemFour)'
+                    [@state]="'in'">
+            </button>
+
+          </div>
+
+
+          <!--<div class="play-button-circle c5">-->
+
+
+            <!--<div class="play-button-outer darkButton">-->
+              <!--<div class="play-button"></div>-->
+            <!--</div>-->
+
+
+
+          <!--</div>-->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- circles -->
+
+
+
+
+
+
+
+
+
+
+   <div class="form-box-profile-info col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="height: 500px;">
+
+     <!--<div class="col-lg-4">-->
+
+     <div class="row">
+
+
+       <div class="profile-picture col-lg-5 col-xs-4 col-sm-4 col-md-4" style="margin-top: 6%;">
+       <img src="./assets/images/architecture-bar-building.jpg" style="    width: 223px;display: inline;height: 190px;">
+       </div>
+
+
+       <!-- this is follow button for profile info window -->
+
+       <button class="darkButton col-lg-4" (click)="followButtonListener(userDetail)" style="display: inline;position: absolute;top: 0px;right: 0px;" aria-label="Left Align">
+         <span class="glyphicon glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+         {{userDetail.following == true ? "UnFollow": "Follow"}}</button>
+
+
+       <div class="profile-info-text col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" style="margin-top: 10%;color: #c3bbbb;font-size: 20px !important;list-style-type:none;border-spacing: 10px;font-family: cursive;">
+
+
+         <p>{{userDetail.description}}</p>
+
+
+         <hr>
+
+
+         <table style="width: 55%;">
+
+
+         <tr>
+           <td>Firstname</td>
+           <td>{{userDetail.firstName}}</td>
+         </tr>
+         <tr>
+           <td>LastName</td>
+           <td>{{userDetail.lastName}}</td>
+         </tr>
+           <tr>
+             <td>Email</td>
+             <td>{{userDetail.emailId}}</td>
+           </tr>
+         <tr>
+           <td>CityName</td>
+           <td>{{userDetail.cityName}}</td>
+         </tr>
+         <tr>
+           <td>Hobby</td>
+           <td>{{userDetail.hobby}}</td>
+         </tr>
+
+         <tr>
+           <td>DateOfBirth</td>
+           <td>{{userDetail.dateOfBirth}}</td>
+         </tr>
+
+
+
+
+       </table>
+
+       </div>
+
+
+
+     </div>
+     <!--</div>-->
+
+   </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+ </div>
+
+</div>

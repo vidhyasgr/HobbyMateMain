@@ -1,0 +1,41 @@
+<div>
+  <!--<div class="top">-->
+    <!--<h2>CONTACTS</h2>-->
+  <!--</div>-->
+
+
+  <button class="darkButton" (click)="toggleMenu()">Show-chat-list</button>
+
+
+  <div class="scroll-area form-box col-sm-3 col-md-3 col-xs-3 col-lg-3 col-xl-3" style="height:60%;" [@slideInOut]="menuState">
+
+
+    <div *ngFor="let chatList of chatLists" (click)="clickOnChatListName(chatList)">
+
+      <div class="col-sm-4 col-md-4 col-xs-4 col-lg-12 col-xl-4">
+
+        <div class="col-sm-1 col-md-1 col-xs-1 col-lg-3 col-xl-1">
+          <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle adjustImageHorizontal" width="30px">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-xs-4 col-lg-8 col-xl-4">
+          <h3 style="color: white">{{chatList.first_name}}</h3>
+        </div>
+
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<app-chat-box></app-chat-box>
+
+
+
+
+

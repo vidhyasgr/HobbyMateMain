@@ -1,0 +1,25 @@
+<p>
+  socket-chat works!
+</p>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Panel heading without title</div>
+
+
+  <div class="panel-body">
+
+    <p *ngFor="let message of chatMessages">
+      {{message}}
+    </p>
+
+
+
+  </div>
+  <div class="panel-footer">
+
+    <input type="text" maxlength="250" style="width: auto"  #box (keyup.enter)="sendMessage(box.value)">
+
+    <button class="darkButton" style="display: inline;" (click)="sendMessage(box.value)">Send</button>
+
+  </div>
+</div>

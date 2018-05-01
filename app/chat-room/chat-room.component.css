@@ -1,0 +1,35 @@
+.adjustImageHorizontal {
+  margin-top: 44%;
+}
+.container {
+  height: 50%;
+  background-color: #000;
+  /* overflow: auto; */
+}
+.row {
+  position: absolute;
+}
+
+.scroll-area{
+  /*width:100%;*/
+  height:calc(100% - 200px);
+  float:left;
+  overflow-y:scroll;
+}
+
+
+
+.form-box
+{
+  border: 2px solid rgba(153, 153, 153, 0.75);
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -o-border-radius: 2px;
+//z-index: 3;
+  font-size: 13px !important;
+  font-family: Pacifico;
+  background-color: #0e0808;
+  opacity: 0.6;
+}

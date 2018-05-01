@@ -1,0 +1,21 @@
+<div class="alert alert-info" role="alert" style="padding: 4px;margin-top: 5%;">
+
+  <h1 class="text-center">Image Gallery</h1>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-lg-3 col-xs-3" *ngFor="let image of visibleImages">
+    <div class="thumbnail">
+      <img src={{image.url}} alt="...">
+      <div class="caption">
+        <h3>Dancing Group</h3>
+        <p>...</p>
+        <p>
+          <button class="darkButton" role="button">View</button></p>
+      </div>
+    </div>
+  </div>
+</div>
